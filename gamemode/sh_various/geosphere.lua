@@ -40,7 +40,8 @@ end
 	
 	
 
-function Geosphere(iter,W,H) 
+function Geosphere(iter,func) 
+	func = func or function(pos,iter) return pos end
 	
 	--Add base triangles
 	local Faces = {
@@ -74,6 +75,10 @@ function Geosphere(iter,W,H)
 		local newFaces = {}
 		local i2 = 1
 		for k,tri in pairs(Faces) do
+			tri[1].pos = func(tri[1].pos,i)
+			tri[2].pos = func(tri[2].pos,i)
+			tri[3].pos = func(tri[3].pos,i)
+			
 			local a = GetMiddle(tri[1].pos,tri[2].pos)
 			local b = GetMiddle(tri[2].pos,tri[3].pos)
 			local c = GetMiddle(tri[3].pos,tri[1].pos)
@@ -113,16 +118,16 @@ function Geosphere(iter,W,H)
 		for i,vert in pairs(v) do
 			ia=ia+1
 			
-			local N = v[i].pos:GetNormal()
+			local N = v[i].pos:GetNormalized()
 			
-			local u = asin(N.x) / pi
-            local v = asin(N.z) / pi
+			local U = asin(N.x) / pi
+            local V = asin(N.z) / pi
 			
 			Tri[ia] = {
-				pos = N*W,
+				pos = v[i].pos,
 				normal = N,
-				u = u,
-				v = v,
+				u = U,
+				v = V,
 			}
 		end
 	end
