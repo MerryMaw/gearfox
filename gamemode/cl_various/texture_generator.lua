@@ -4,7 +4,7 @@
 local GenTex 			= {}
 
 function CreateTexture(id,w,h,renderfunc,mat,shader)
-	if (GenTex[id]) then return GenTex[id] end
+	if (GenTex[id]) then return GenTex[id][1], GenTex[id][2] end
 	renderfunc = renderfunc or function() end
 	
 	local name = 'rt_'..id
@@ -43,7 +43,7 @@ function CreateTexture(id,w,h,renderfunc,mat,shader)
 		cam.End2D()
 	render.PopRenderTarget()
 	
-	GenTex[id] = mat
+	GenTex[id] = {mat,name}
 	
-	return GenTex[id] , name
+	return mat , name
 end
