@@ -113,3 +113,7 @@ function math.EllipsoidEdge(Dir,Origin,Ang,Size)
 	
 	return Ab
 end
+
+function math.Centerize(i,i_max,w)
+    return -i_max * w / 2 + i * w
+end

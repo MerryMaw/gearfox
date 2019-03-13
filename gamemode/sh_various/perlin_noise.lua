@@ -83,9 +83,8 @@ perlin.dot_product = {
 function grad(hash, x, y, z)
     return perlin.dot_product[bit.band(hash,0xF)](x,y,z)
 end
-
-//Debug
 /*
+//Debug
 if (SERVER) then return end
 
 local max = math.max
