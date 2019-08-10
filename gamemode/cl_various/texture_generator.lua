@@ -12,7 +12,7 @@ function CreateTexture(id,w,h,renderfunc,mat,shader)
 	--create the new render target
 	
 	//Diffuse
-	local flags = bit.bor(4, 8, 16)
+	local flags = bit.bor(4, 8, 1)
 	local rt = GetRenderTargetEx(name,
 			w, h,
 			RT_SIZE_NO_CHANGE,
@@ -27,7 +27,7 @@ function CreateTexture(id,w,h,renderfunc,mat,shader)
 		["$basetexture"] = name
 	}
 	
-	mat = CreateMaterial(name, shader or 'UnlitGeneric', mat and table.Add(vmt,mat) or vmt)
+	mat = CreateMaterial(name, shader or 'UnlitGeneric', mat and table.Merge(vmt,mat) or vmt)
 	 
 	--save these for later
 	local oldrt = render.GetRenderTarget()
@@ -35,8 +35,8 @@ function CreateTexture(id,w,h,renderfunc,mat,shader)
 	 
 	//Render Diffuse map!
 	render.PushRenderTarget(rt)
-		render.Clear(0, 0, 0, 255)
 		render.ClearDepth()
+		render.Clear(0, 0, 0, 0)
 		
 		cam.Start2D()
 			renderfunc(w,h)

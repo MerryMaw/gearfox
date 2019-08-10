@@ -6,6 +6,7 @@ AddLuaCSFolder("cl_hud/menus")
 AddLuaCSFolder("cl_hud")
 
 AddLuaSHFolder("sh_various")
+AddLuaSHFolder("sh_java")
 
 AddLuaSVFolder("sv_various")
 
@@ -13,7 +14,7 @@ GM.Name 			= "Gearfox"
 GM.Author 			= "The Maw"
 GM.Email 			= "cjbremer@gmail.com"
 GM.Website 			= "www.devinity2.com"
-GM.Version			= 1.4
+GM.Version			= 1.5
 
 
 function GM:PlayerNoClip( pl )

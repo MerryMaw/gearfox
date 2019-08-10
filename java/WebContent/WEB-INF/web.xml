@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+  <!-- To save as <CATALINA_HOME>\webapps\helloservlet\WEB-INF\web.xml -->
+ 
+   <!-- <servlet>
+      <servlet-name>gServlet</servlet-name>
+      <servlet-class>gmodGamemode.GModWebServlet</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+   </servlet> -->
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <!-- <servlet-mapping>
+      <servlet-name>gServlet</servlet-name>
+      <url-pattern>/jnet</url-pattern>
+   </servlet-mapping> -->
+</web-app>
