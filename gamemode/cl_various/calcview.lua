@@ -166,6 +166,8 @@ hook.Add("CalcView","View",function(ply, origin, angles, fov)
 	
 	view.origin.z				= view.origin.z + CamHeight
 	
+	view.drawviewer 			= !IsFirstPerson()
+	
 	RPos 						= view.origin or origin
 	
 	return view

@@ -9,10 +9,6 @@ GM.UseMawBlockCHud 	= true
 function GM:Initialize()
 end
 
-function GM:ShouldDrawLocalPlayer()
-	return (!IsFirstPerson())
-end
-
 function GM:CallScreenClickHook()
 end
 
