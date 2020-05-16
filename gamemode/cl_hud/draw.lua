@@ -5,7 +5,6 @@ function GM:HUDPaint()
 	DrawMaterialRect(ScrW()-256,ScrH()-128,256,128,MAIN_WHITECOLOR,Logo)
 	
 	DrawHealthbar()
-	DrawBatteryLife()
 end
 
 
